@@ -35,7 +35,7 @@ def get_mac(ip):
   
     return  "YOUR_ROUTER_MAC-ADDRESS" #Write here your router MAC-address
 
-logging.basicConfig(format='%(asctime)s - %(message)s',filename= 'arp.log',filemode='a', datefmt='%d-%b-%y %H:%M:%S')# Setting logging parameters
+logging.basicConfig(format='%(asctime)s - %(message)s',filename= 'main.log',filemode='a', datefmt='%d-%b-%y %H:%M:%S')# Setting logging parameters
 
 
 def sniff_packet(interface):
