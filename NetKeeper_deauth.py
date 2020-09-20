@@ -6,7 +6,7 @@ import logging
 from scapy.layers.dot11 import Dot11
 from scapy.sendrecv import sniff
 
-interface='wlan1mon'
+interface='YOUR_MON_INTERFACE' # Set your monitor interface.
 
 print(" _   _      _   _  __")
 print("| \ | | ___| |_| |/ /___  ___ _ __   ___ _ __")
