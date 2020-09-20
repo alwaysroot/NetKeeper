@@ -15,3 +15,4 @@ This is a part of project NetKeeper.
 - [ ] OLED support
 - [ ] VPN
 - [ ] Logging new users
+- [ ] SSH-server
