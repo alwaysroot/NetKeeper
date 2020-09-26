@@ -1,4 +1,4 @@
-![NetKeeper](https://itdefence.pp.ua/logo_white.png)
+![NetKeeper](https://github.com/alwaysroot/NetKeeper/blob/master/logo_white.png)
 # NetKeeper
 This is a part of project NetKeeper.
 <p>NetKeeper_arp.py detects ARP-spoofing attacks, blinks led and log it.
