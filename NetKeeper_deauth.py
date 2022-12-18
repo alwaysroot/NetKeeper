@@ -6,7 +6,7 @@ import logging
 from scapy.layers.dot11 import Dot11
 from scapy.sendrecv import sniff
 
-interface='YOUR_MON_INTERFACE' # Set your monitor interface.
+interface='wlan1mon' # Set your monitor interface.
 
 print(" _   _      _   _  __")
 print("| \ | | ___| |_| |/ /___  ___ _ __   ___ _ __")
@@ -19,20 +19,8 @@ logging.basicConfig(format='%(asctime)s - %(message)s',filename= 'main.log',file
 
 
 
-# set Packet Counter 
-Packet_Counter = 1
-
-# extract  packet 
-def info(packet):
-    if packet.haslayer(Dot11):
-        # The packet.subtype==12  indicates  deauth frame
-        if ((packet.type == 0) & (packet.subtype==12)):
-            global Packet_Counter
-            logging.warning('Deauth-attack detected.')
-            print ("[!]Deauthentication Packet detected ", Packet_Counter)
-            Packet_Counter = Packet_Counter + 1
-
-
-
-sniff(iface=interface,prn=info)
-
+def process_packet(packet):
+    if packet.haslayer(Dot11Deauth):
+        print(' [ ' +  str(datetime.datetime.now())+ ' ] '+  ' Deauthentication Attack Detected Against Mac Address: ' +   str(packet.addr2).swapcase())
+#Running scanner for packet
+sniff(iface="wlan1mon", prn=process_packet, store=False, count=0)
