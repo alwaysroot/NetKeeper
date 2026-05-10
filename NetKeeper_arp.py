@@ -8,9 +8,7 @@ from time import sleep
 
 import logging
 import os
-led = 14 #write here your led pin(Raspberry Pi)
-#GPIO.add_event_detect(channel, GPIO.RISING, callback=my_callback, bouncetime=200)
-
+led = 14 
 print(" _   _      _   _  __")
 print("| \ | | ___| |_| |/ /___  ___ _ __   ___ _ __")
 print("|  \| |/ _ \ __| ' // _ \/ _ \ '_ \ / _ \ '__|")
@@ -20,16 +18,7 @@ print("                             |_|           ")
 
 
 
-#GPIO.setmode(GPIO.BOARD)
-#GPIO.setup(led, GPIO.OUT)
 
-
-#def get_arguments():
-#    parser = argparse.ArgumentParser()
-#    parser.add_argument("-i", "--interface", dest="interface", 
-#                        help="Your Interface ")
-#    options = parser.parse_args()
-#    return options
 interface = 'eth0'
 
 def get_mac(ip):
@@ -61,5 +50,5 @@ def process_packets(packet):
             pass
 
 
-#options = get_arguments()
+
 sniff_packet(interface)
